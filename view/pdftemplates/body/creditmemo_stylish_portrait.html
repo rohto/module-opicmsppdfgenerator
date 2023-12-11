@@ -1,0 +1,145 @@
+
+<div class="body"
+     style="position: relative; width: 21cm; height: 29.7cm; margin: 0 auto; background: #FFFFFF; ">
+    <div class="main">
+        <div id="details" class="clearfixx" style="margin-bottom: 20px;">
+            <table id="client" style="width: 100%; border-collapse: collapse; font-family: 'Oswald'; border-spacing: 0; margin: 0 40pt">
+                <tr>
+                    <td class="name" style=" text-align: left; width: 25%; padding-top: 15px ">
+                        <p style="color: #364766; margin-bottom: 20px; font-size: 14pt">SHIPPING
+                            TO</p>
+                        <p style="margin-bottom: 20px; font-size: 9pt">&nbsp;</p>
+                        <p style="font-size: 9pt; color: #364766; font-family: 'Oswald';">{{var
+                            formattedShippingAddress|raw}}</p>
+                    </td>
+                    <td class="name" style=" text-align: left; width: 25%; padding-top: 15px;">
+                        <p style="color: #364766; margin-bottom: 20px;  font-size: 14pt ">BILLING
+                            TO</p>
+                        <p style="margin-bottom: 20px; font-size: 9pt">&nbsp;</p>
+                        <p style="font-size: 9pt; color: #364766; font-family: 'Oswald';">{{var
+                            formattedBillingAddress|raw}}</p>
+                    </td>
+                    <td class="name"
+                        style=" text-align: right; width: 50%; vertical-align: top; padding-top: 15px; padding-left: 20px ">
+                        <div style="display: inline-block">{{var custom_barcode_c39_creditmemo.increment_id}}</div>
+                        <p style="margin-bottom: 20px; font-size: 9pt">&nbsp;</p>
+                        <p class="date" style="color: #364766; margin-bottom: 20px;  font-size: 9pt ">
+                            Date of order:  {{var order.created_at}}
+                        </p>
+                        <p style="margin-bottom: 20px; font-size: 9pt">&nbsp;</p>
+                        <p class="date" style="color: #364766; margin-bottom: 20px;  font-size: 9pt ">
+                            Status: {{var order.status}}
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <table class="table"
+               style="width: 100%; padding: 0 40pt; color: #364766; border-collapse: collapse; border-spacing: 0; margin-bottom: 20px;"
+               border="0">
+            <thead>
+            <tr>
+                <th class="no">#</th>
+                <th class="desc">Description</th>
+                <th class="unit">Price w/ TVA</th>
+                <th class="unit">Price w/o VAT</th>
+                <th class="qty">Qty</th>
+                <th class="qty">VAT</th>
+                <th class="qty">VAT %</th>
+                <th class="unit">Total w/o VAT</th>
+                <th class="total">Total w/ VAT</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td colspan="9">##productlist_start##</td>
+            </tr>
+            <tr>
+                <td class="no">
+                    <p>{{var item.position}}</p>
+                </td>
+                <td class="desc">
+                    <p>{{var item.name}}</p>
+                    <p>{{var item.sku}}</p>
+                </td>
+                <td class="unit">
+                    <p>{{var custom_item.price_incl_tax}}</p>
+                </td>
+                <td class="unit">
+                    <p>{{var custom_item.price}}</p>
+                </td>
+                <td class="qty">
+                    <p>{{var custom_item.qty}}</p>
+                </td>
+                <td class="qty">
+                    <p>{{var custom_item.tax_amount}}</p>
+                </td>
+                <td class="qty">
+                    <p>{{var item.tax_percent}}</p>
+                </td>
+                <td class="unit">
+                    <p>{{var custom_item.row_total}}</p>
+                </td>
+                <td class="total">{{var custom_item.row_total_incl_tax}}</td>
+            </tr>
+            <tr>
+                <td colspan="9">##productlist_end##</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td style=" padding-top: 14px;">&nbsp;</td>
+                <td colspan="7" style="padding-right: 10px; padding-top: 14px; font-family: 'Oswald'; ">SUBTOTAL W/O VAT</td>
+                <td style="text-align: left; font-weight: bold; padding-left: 10px; padding-top: 14px; ">{{var custom_creditmemo.subtotal}}
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td colspan="7" style="padding-right: 10px; font-family: 'Oswald';">SUBTOTAL</td>
+                <td style="text-align: left; font-weight: bold; padding-left: 10px">{{var custom_creditmemo.subtotal_incl_tax}}
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td colspan="7" style="padding-right: 10px; font-family: 'Oswald';">SHIPPING TAX W/O VAT</td>
+                <td style="text-align: left; font-weight: bold; padding-left: 10px">{{var custom_creditmemo.shipping_tax_amount}}{{depend creditmemo_if.base_shipping_amount}}
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td colspan="7" style="padding-right: 10px; font-family: 'Oswald';">DEPEND SHIPPING TAX</td>
+                <td style="text-align: left; font-weight: bold; padding-left: 10px">{{var creditmemo.base_shipping_amount}}{{/depend}}
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td colspan="7" style="padding-right: 10px; font-family: 'Oswald';">SHIPPING TAX W/ VAT</td>
+                <td style="text-align: left; font-weight: bold; padding-left: 10px">{{var custom_creditmemo.shipping_incl_tax}}{{depend creditmemo_if.base_shipping_amount}}
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td colspan="7" style="padding-right: 10px; font-family: 'Oswald';">DEPEND SHIPPING TAX</td>
+                <td style="text-align: left; font-weight: bold; padding-left: 10px">{{var creditmemo.base_shipping_amount}}{{/depend}}
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td colspan="7" style="padding-right: 10px; font-family: 'Oswald';">GRAND TOTAL W/O VAT</td>
+                <td style="text-align: left; font-weight: bold; padding-left: 10px">{{var custom_creditmemo.subtotal}}</td>
+            </tr>
+            <tr>
+                <td colspan="4">&nbsp;</td>
+                <td class="grandtotal"
+                    style="font-weight: bold; font-size: 14pt; font-family: 'Oswald'; padding-right: 10px;  color: #364766;"
+                    colspan="4">GRAND TOTAL
+                </td>
+                <td class="grandtotal"
+                    style="font-weight: bold;  font-size: 14pt; text-align: left; padding-left: 10px">
+                    {{var custom_creditmemo.grand_total}}
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

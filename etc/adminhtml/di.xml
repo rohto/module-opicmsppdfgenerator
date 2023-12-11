@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <type name="Magento\Variable\Model\Variable\Config">
+        <plugin name="change_variable_controller"
+                type="Eadesigndev\PdfGeneratorPro\Model\Plugin\Config"
+                sortOrder="10"
+                disabled="false"/>
+    </type>
+    <type name="Magento\Sales\Block\Adminhtml\Order\Invoice\View">
+        <plugin name="change_print_button_url"
+                type="Eadesigndev\PdfGeneratorPro\Model\Plugin\Printinvoice"
+                sortOrder="10"
+                disabled="false"/>
+    </type>
+
+    <type name="Magento\Shipping\Block\Adminhtml\View">
+        <plugin name="change_print_button_url_s"
+                type="Eadesigndev\PdfGeneratorPro\Model\Plugin\Printshipment"
+                sortOrder="10"
+                disabled="false"/>
+    </type>
+
+    <type name="Magento\Sales\Block\Adminhtml\Order\Creditmemo\View">
+        <plugin name="change_print_button_url_cc"
+                type="Eadesigndev\PdfGeneratorPro\Model\Plugin\Printcreditmemo"
+                sortOrder="10"
+                disabled="false"/>
+    </type>
+
+    <type name="Magento\Ui\Component\MassAction">
+        <plugin name="Eadesigndev_PdfGeneratorPro::addMassaction"
+                type="Eadesigndev\PdfGeneratorPro\UI\Plugin\Product\Component\MassActionPlugin"/>
+    </type>
+
+    <type name="Eadesigndev\PdfGeneratorPro\UI\Component\Sales\Order\Masspdf\Pdftemplates">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="urlPath" xsi:type="string">eadesign_pdf/order_massaction/printpdf</item>
+                <item name="paramName" xsi:type="string">template_id</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Eadesigndev\PdfGeneratorPro\UI\Component\Sales\Order\Invoice\Masspdf\Pdftemplates">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="urlPath" xsi:type="string">eadesign_pdf/order_massaction/printpdfinvoice</item>
+                <item name="paramName" xsi:type="string">template_id</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Eadesigndev\PdfGeneratorPro\UI\Component\Sales\Order\Shipment\Masspdf\Pdftemplates">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="urlPath" xsi:type="string">eadesign_pdf/order_massaction/printpdfshipment</item>
+                <item name="paramName" xsi:type="string">template_id</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Eadesigndev\PdfGeneratorPro\UI\Component\Sales\Order\Creditmemo\Masspdf\Pdftemplates">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="urlPath" xsi:type="string">eadesign_pdf/order_massaction/printpdfcreditmemo</item>
+                <item name="paramName" xsi:type="string">template_id</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Eadesigndev\PdfGeneratorPro\UI\Component\Sales\Order\Invoice\Masspdf\Pdftemplates">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="urlPath" xsi:type="string">eadesign_pdf/order_massaction_invoice/printpdf</item>
+                <item name="paramName" xsi:type="string">template_id</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Eadesigndev\PdfGeneratorPro\UI\Component\Sales\Order\Shipment\Masspdf\Pdftemplates">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="urlPath" xsi:type="string">eadesign_pdf/order_massaction_shipment/printpdf</item>
+                <item name="paramName" xsi:type="string">template_id</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Eadesigndev\PdfGeneratorPro\UI\Component\Sales\Order\Creditmemo\Masspdf\Pdftemplates">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="urlPath" xsi:type="string">eadesign_pdf/order_massaction_creditmemo/printpdf</item>
+                <item name="paramName" xsi:type="string">template_id</item>
+            </argument>
+        </arguments>
+    </type>
+
+</config>

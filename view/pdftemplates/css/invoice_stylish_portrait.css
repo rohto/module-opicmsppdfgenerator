@@ -1,0 +1,109 @@
+
+#thanks {
+    font-family: 'Oswald';
+}
+
+.clearfix {
+    font-family: 'Oswald';
+    color: #364766;
+}
+
+.clearfix:after {
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix .logo img {
+    height: 80px;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+table tbody tr td {
+    background-color: #ffffff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 20px;
+    font-size: 9pt;
+    font-family: 'Oswald';
+}
+
+table thead th {
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #ffffff;
+    background-color: #7c899f;
+    font-family: 'Oswald';
+}
+
+table tfoot {
+    text-align: right;
+    font-size: 9px;
+}
+
+table tfoot td, table tfoot th {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-bottom: none;
+    font-size: 9pt;
+    white-space: nowrap;
+    text-align: right;
+    font-weight: normal;
+    font-family: 'Oswald';
+}
+
+tbody .total {
+    font-weight: bold;
+}
+
+table tbody tr.even {
+    background-color: #f2f2f2;
+}
+
+.no {
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 5%;
+    padding-left: 40pt;
+    padding-right: 5pt;
+    font-family: 'Oswald';
+}
+
+.qty {
+    width: 6%;
+    text-align: left;
+    padding-left: 5px;
+    font-family: 'Oswald';
+}
+
+.unit {
+    width: 10%;
+    text-align: left;
+    font-family: 'Oswald';
+}
+
+.desc {
+    width: 29%;
+    text-align: left;
+    padding-left: 10px;
+    font-family: 'Oswald';
+}
+
+.total {
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 40pt;
+    width: 18%;
+    font-family: 'Oswald';
+}

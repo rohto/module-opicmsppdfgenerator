@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:framework:Ui/etc/ui_configuration.xsd">
+    <listingToolbar name="listing_top">
+        <massaction name="listing_massaction">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/tree-massactions</item>
+                </item>
+            </argument>
+            <action name="pdf_customizer_order">
+                <settings>
+                    <type>pdf_customizer_order</type>
+                    <label translate="true">PDF Generator: Order</label>
+                    <actions class="Eadesigndev\PdfGeneratorPro\UI\Component\Sales\Order\Masspdf\Pdftemplates"/>
+                </settings>
+            </action>
+            <action name="pdf_customizer_invoice">
+                <settings>
+                    <type>pdf_customizer_order_invoice</type>
+                    <label translate="true">PDF Generator: Invoice</label>
+                    <actions class="Eadesigndev\PdfGeneratorPro\UI\Component\Sales\Order\Invoice\Masspdf\Pdftemplates"/>
+                </settings>
+            </action>
+            <action name="pdf_customizer_shipment">
+                <settings>
+                    <type>pdf_customizer_order_shipment</type>
+                    <label translate="true">PDF Generator: Shipment</label>
+                    <actions class="Eadesigndev\PdfGeneratorPro\UI\Component\Sales\Order\Shipment\Masspdf\Pdftemplates"/>
+                </settings>
+            </action>
+            <action name="pdf_customizer_creditmemo">
+                <settings>
+                    <type>pdf_customizer_order_creditmemo</type>
+                    <label translate="true">PDF Generator: Credit memo</label>
+                    <actions class="Eadesigndev\PdfGeneratorPro\UI\Component\Sales\Order\Creditmemo\Masspdf\Pdftemplates"/>
+                </settings>
+            </action>
+            <action name="pdf_customizer_all">
+
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">pdf_customizer_order_all</item>
+                        <item name="label" xsi:type="string" translate="true">PDF Generator: All</item>
+                        <item name="url" xsi:type="url" path="eadesign_pdf/order_massaction/printpdfdocuments"/>
+                    </item>
+                </argument>
+            </action>
+        </massaction>
+    </listingToolbar>
+</listing>
+

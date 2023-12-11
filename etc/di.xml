@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Eadesigndev\PdfGeneratorPro\Api\Data\TemplatesInterface"
+                type="Eadesigndev\PdfGeneratorPro\Model\Pdfgenerator" />
+    <preference for="Eadesigndev\PdfGeneratorPro\Api\TemplatesRepositoryInterface"
+                type="Eadesigndev\PdfGeneratorPro\Model\PdfgeneratorRepository" />
+    <preference for="Magento\Sales\Block\Order\Invoice\Items"
+                type="Eadesigndev\PdfGeneratorPro\Block\Sales\Order\Invoice\Items" />
+    <preference for="Magento\Shipping\Block\Items"
+                type="Eadesigndev\PdfGeneratorPro\Block\Sales\Shipment\Items" />
+    <preference for="Magento\Sales\Block\Order\Info\Buttons"
+                type="Eadesigndev\PdfGeneratorPro\Block\Sales\Order\Info\Buttons" />
+    <preference for="Magento\Sales\Block\Order\Creditmemo\Items"
+                type="Eadesigndev\PdfGeneratorPro\Block\Sales\Order\Creditmemo\Items" />
+    <preference for="\Magento\Framework\Mail\Template\TransportBuilder"
+                type="Eadesigndev\PdfGeneratorPro\Model\Email\TransportBuilder"/>
+    <preference for="\Magento\Sales\Model\Order\Email\SenderBuilder"
+                type="Eadesigndev\PdfGeneratorPro\Model\Email\SenderBuilder"/>
+
+    <preference for="Magento\Framework\Mail\Message"
+                type="Eadesigndev\PdfGeneratorPro\Model\Email\Message"/>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="xtea_pdf_templates_data_source" xsi:type="string">Eadesigndev\PdfGeneratorPro\Model\ResourceModel\Pdfgenerator\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Eadesigndev\PdfGeneratorPro\Model\ResourceModel\Pdfgenerator\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">xtea_pdf_templates</argument>
+            <argument name="eventPrefix" xsi:type="string">xtea_pdf_templates_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">templates_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Eadesigndev\PdfGeneratorPro\Model\ResourceModel\Pdfgenerator</argument>
+        </arguments>
+    </type>
+
+    <virtualType name="TemplatesGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Eadesigndev\PdfGeneratorPro\Model\Resource\Pdfgenerator\Grid\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">TemplatesGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+</config>

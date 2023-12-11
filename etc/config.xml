@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <xtea_pdfgenerator>
+            <settings>
+                <editor>0</editor>
+            </settings>
+            <order>
+                <enabled>1</enabled>
+            </order>
+            <invoice>
+                <enabled>1</enabled>
+            </invoice>
+            <shipment>
+                <enabled>1</enabled>
+            </shipment>
+            <creditmemo>
+                <enabled>1</enabled>
+            </creditmemo>
+            <product>
+                <enabled>1</enabled>
+            </product>
+        </xtea_pdfgenerator>
+    </default>
+</config>

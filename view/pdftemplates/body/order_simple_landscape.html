@@ -1,0 +1,140 @@
+
+<div>
+    <div class="body"
+         style="position: relative; width: 29.7cm; height: 21cm; margin: 0 auto; background: #FFFFFF; ">
+        <div class="main">
+            <div id="details" class="clearfix" style="margin-bottom: 20px;">
+                <table id="client" style="width: 100%; border-collapse: collapse; border-spacing: 0;">
+                    <tr>
+                        <td class="name" style=" text-align: left; width: 25%; padding-top: 20px ">
+                            <p style="color: #000000; margin-bottom: 20px; font-weight: bold; font-size: 14pt">SHIPPING TO</p>
+                            <div style="font-size: 11pt">{{var formattedShippingAddress|raw}}</div>
+                        </td>
+                        <td class="name" style=" text-align: left; width: 25%; padding-top: 20px;">
+                            <p style="color: #000000; margin-bottom: 20px; font-weight: bold;  font-size: 14pt ">BILLING TO</p>
+                            <div style="font-size: 11pt">{{var formattedBillingAddress|raw}}</div>
+                        </td>
+                        <td id="invoice" style=" text-align: right; width: 50%; vertical-align: top; padding-top: 20px; ">
+                            <div style=" font-size: 18pt;text-transform: uppercase; font-weight: normal;">
+                                Order #{{var order.increment_id}}
+                            </div>
+                            <div class="date">
+                                {{var custom_barcode_c39_order.increment_id}}
+                            </div>
+                            <div class="date" style=" padding: 5px 0; ">
+                                Date of order :{{var order.created_at}}
+                            </div>
+                            <div class="date" style="padding: 5px 0; ">
+                                Status :{{var order.status}}
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <table class="table" style="width: 100%; border-collapse: collapse; border-spacing: 0; margin-bottom: 20px;" border="0">
+                <thead>
+                <tr>
+                    <th class="no">#</th>
+                    <th class="desc">Description</th>
+                    <th class="sku">&nbsp;</th>
+                    <th class="unit">Price w/ TVA</th>
+                    <th class="unit">Price w/o VAT</th>
+                    <th class="qty">Qty</th>
+                    <th class="unit">VAT</th>
+                    <th class="unit">VAT %</th>
+                    <th class="unit">Total w/o VAT</th>
+                    <th class="total">Total w/ VAT</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td colspan="10">##productlist_start##</td>
+                </tr>
+                <tr>
+                    <td class="no">
+                        <p>{{var item.position}}</p>
+                    </td>
+                    <td class="desc">
+                        <p>{{var item.name}}</p>
+                        <p>{{var item.sku}}</p>
+                    </td>
+                    <td class="sku">
+                        <p>{{var custom_barcode_c39_item.sku}}</p>
+                    </td>
+                    <td class="unit">
+                        <p>{{var custom_item.price_incl_tax}}</p>
+                    </td>
+                    <td class="unit">
+                        <p>{{var custom_item.price}}</p>
+                    </td>
+                    <td class="qty">
+                        <p> Ordered:{{var custom_item.qty_ordered}}</p>
+                        <p> Invoiced:{{var custom_item.qty_invoiced}}</p>
+                        <p> Shipped:{{var custom_item.qty_shipped}}</p>
+                        <p> Refunded:{{var custom_item.qty_refunded}}</p>
+                    </td>
+                    <td class="unit">
+                        <p>{{var custom_item.tax_amount}}</p>
+                    </td>
+                    <td class="unit">
+                        <p>{{var item.tax_percent}}</p>
+                    </td>
+                    <td class="unit">
+                        <p>{{var custom_item.row_total}}</p>
+                    </td>
+                    <td class="total">{{var custom_item.row_total_incl_tax}}</td>
+                </tr>
+                <tr>
+                    <td colspan="10">##productlist_end##</td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td colspan="8" style="padding-right: 10px">SUBTOTAL W/O VAT</td>
+                    <td style="text-align: left; font-weight: bold; padding-left: 10px">{{var custom_order.subtotal}}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td colspan="8" style="padding-right: 10px">SUBTOTAL</td>
+                    <td style="text-align: left; font-weight: bold; padding-left: 10px">{{var custom_order.subtotal_incl_tax}}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td colspan="8" style="padding-right: 10px">SHIPPING TAX W/O VAT</td>
+                    <td style="text-align: left; font-weight: bold; padding-left: 10px">{{var custom_order.shipping_tax_amount}}{{depend order_if.base_shipping_amount}}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td colspan="8" style="padding-right: 10px">DEPEND SHIPPING TAX</td>
+                    <td style="text-align: left; font-weight: bold; padding-left: 10px">{{var order.base_shipping_amount}}{{/depend}}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td colspan="8" style="padding-right: 10px">SHIPPING TAX WITH VAT</td>
+                    <td style="text-align: left; font-weight: bold; padding-left: 10px">{{var custom_order.shipping_incl_tax}}{{depend order_if.base_shipping_amount}}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td colspan="8" style="padding-right: 10px">DEPEND SHIPPING TAX</td>
+                    <td style="text-align: left; font-weight: bold; padding-left: 10px">{{var order.base_shipping_amount}}{{/depend}}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td colspan="8" style="padding-right: 10px">GRAND TOTAL W/O VAT</td>
+                    <td style="text-align: left; font-weight: bold; padding-left: 10px">{{var custom_order.subtotal}}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td class="grandtotal" style="font-weight: bold; font-size: 14pt; padding-right: 10px"
+                        colspan="8">GRAND TOTAL
+                    </td>
+                    <td class="grandtotal" style="font-weight: bold; font-size: 14pt; text-align: left; padding-left: 10px">
+                        {{var custom_order.grand_total}}
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>

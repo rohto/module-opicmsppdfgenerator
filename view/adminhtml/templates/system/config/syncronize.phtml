@@ -1,0 +1,13 @@
+<?php
+/** @var $block \Eadesigndev\PdfGeneratorPro\Block\Adminhtml\System\Config\Button */
+?>
+
+<div class="pp-buttons-container">
+    <p>
+        <button id="<?php echo $block->getHtmlId() ?>"
+                onclick="setLocation('<?php /* @escapeNotVerified */ echo $block->getSynkUrl() ?>')"
+                type="button">
+            <?php /* @escapeNotVerified */ echo __('Syncronize folders') ?>
+        </button>
+    </p>
+</div>

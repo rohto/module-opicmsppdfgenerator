@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<body>
+    <referenceContainer name="product.info.social">
+        <block class="Eadesigndev\PdfGeneratorPro\Block\Product\Pdf" name="product.info.pdf" template="Eadesigndev_PdfGeneratorPro::Product/pdf.phtml" ifconfig="xtea_pdfgenerator/product/enabled" />
+    </referenceContainer>
+</body>

@@ -1,0 +1,69 @@
+
+#thanks {
+    font-family: 'Oswald';
+}
+
+.clearfix {
+    font-family: 'Oswald';
+    color: #364766;
+}
+
+.clearfix:after {
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix .logo img {
+    height: 80px;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+table tbody tr td {
+    background-color: #ffffff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 20px;
+    font-size: 9pt;
+    font-family: 'Oswald';
+}
+
+table tfoot {
+    text-align: right;
+    font-size: 9px;
+}
+
+table tfoot td, table tfoot th {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: none;
+    font-size: 9pt;
+    white-space: nowrap;
+    text-align: right;
+    font-weight: normal;
+    font-family: 'Oswald';
+}
+
+table tbody tr.even {
+    background-color: #f2f2f2;
+}
+
+.desc {
+    width: 60%;
+    text-align: left;
+}
+
+.images {
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 40%;
+}

@@ -1,0 +1,76 @@
+
+#thanks {
+    font-family: 'DejaVu Sans';
+}
+
+.clearfix {
+    font-family: 'DejaVu Sans';
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+    font-family: 'DejaVu Sans';
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+table tbody tr td {
+    background-color: #ffffff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 20px;
+    font-size: 9pt;
+    font-family: 'DejaVu Sans';
+}
+
+table thead th {
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #000000;
+}
+
+table tfoot {
+    text-align: right;
+    font-size: 9px;
+}
+
+table tfoot td, table tfoot th {
+    padding-top: 10px;
+    border-bottom: none;
+    font-size: 9pt;
+    white-space: nowrap;
+    text-align: right;
+    font-weight: normal;
+}
+
+table tbody tr.even {
+    background-color: #f2f2f2;
+}
+
+.desc {
+    width: 70%;
+    text-align: left;
+}
+
+.images {
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 30%;
+}
+
+.images img {
+    display: block;
+    width: 100%;
+}

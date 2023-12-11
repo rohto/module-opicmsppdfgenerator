@@ -1,0 +1,123 @@
+
+<div>
+    <div class="body"
+         style="position: relative; width: 29.7cm; height: 21cm; margin: 0 auto; background: #FFFFFF; ">
+        <div class="main">
+            <div id="details" class="clearfix" style="margin-bottom: 20px;">
+                <table id="client" style="width: 100%; border-collapse: collapse; border-spacing: 0;">
+                    <tr>
+                        <td class="name" style=" text-align: left; width: 25%; padding-top: 20px ">
+                            <p style="color: #000000; margin-bottom: 20px; font-weight: bold; font-size: 14pt">SHIPPING TO</p>
+                            <div style="font-size: 11pt">{{var formattedShippingAddress|raw}}</div>
+                        </td>
+                        <td class="name" style=" text-align: left; width: 25%; padding-top: 20px;">
+                            <p style="color: #000000; margin-bottom: 20px; font-weight: bold;  font-size: 14pt ">BILLING TO</p>
+                            <div style="font-size: 11pt">{{var formattedBillingAddress|raw}}</div>
+                        </td>
+                        <td id="invoice" style=" text-align: right; width: 50%; height: 50pt; padding-top: 20px; vertical-align: top; ">
+                            <div style=" font-size: 23pt;text-transform: uppercase; font-weight: normal;">
+                                SHIPMENT #{{var shipment.increment_id}}
+                            </div>
+                            <div class="date">
+                                {{var custom_barcode_c39_shipment.increment_id}}
+                            </div>
+                            <div class="date" style=" margin: 20pt 0; ">
+                                Date of order :{{var order.created_at}}
+                            </div>
+                            <div class="date" style="padding: 5px 0; ">
+                                Status :{{var order.status}}
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <table class="table" style="width: 100%; border-collapse: collapse; border-spacing: 0; margin-bottom: 20px;" border="0">
+                <thead>
+                <tr>
+                    <th class="no">#</th>
+                    <th class="desc">Description</th>
+                    <th class="sku">&nbsp;</th>
+                    <th class="qty">Qty</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td colspan="4">##productlist_start##</td>
+                </tr>
+                <tr>
+                    <td class="no">
+                        <p>{{var item.position}}</p>
+                    </td>
+                    <td class="desc">
+                        <p>{{var item.name}}</p>
+                        <p>{{var item.sku}}</p>
+                    </td>
+                    <td class="sku">
+                        <p>{{var custom_barcode_c39_item.sku}}</p>
+                    </td>
+                    <td class="qty">
+                        <p>{{var custom_item.qty}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">##productlist_end##</td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td style="">&nbsp;</td>
+                    <td colspan="2" style="padding-right: 10px; font-family: 'Oswald';">
+                        SHIPPING METHOD
+                    </td>
+                    <td style="text-align: left; font-weight: bold; padding-left: 10px;">
+                        {{var order.getShippingDescription()}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td colspan="2" style="padding-right: 10px; font-family: 'Oswald';">
+                        TOTAL QTY
+                    </td>
+                    <td style="text-align: left; font-weight: bold; padding-left: 10px">
+                        {{var custom_shipment.total_qty}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td colspan="2" style="padding-right: 10px; font-family: 'Oswald';">
+                        TOTAL WEIGHT
+                    </td>
+                    <td style="text-align: left; font-weight: bold; padding-left: 10px">
+                        {{var shipment.total_weight}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td colspan="2" style="padding-right: 10px; font-family: 'Oswald'; font-size: 14pt">
+                        SHIPMENT TRACK
+                    </td>
+                    <td style="text-align: left; font-weight: bold; padding-left: 10px">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td colspan="2" style="padding-right: 10px; font-family: 'Oswald';">
+                        SHIPPING TAX
+                    </td>
+                    <td style="text-align: left; font-weight: bold; padding-left: 10px">
+                        {{var custom_order.base_shipping_amount}}{{depend order_if.base_shipping_amount}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td colspan="2" style="padding-right: 10px; font-family: 'Oswald';">DEPEND SHIPPING TAX</td>
+                    <td style="text-align: left; font-weight: bold; padding-left: 10px">
+                        {{var custom_order.base_shipping_amount}}{{/depend}}
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<?php
+
+// @codingStandardsIgnoreFile
+
+/** @var $block \Magento\Catalog\Block\Product\View*/
+?>
+
+<div class="product-addto-links">
+    <?php if ($block->addPDFLink()):?>
+        <a href="<?php /* @escapeNotVerified */ echo  $block->getPrintPDFUrl() ?>"
+           onclick="this.target='_blank'"
+           class="action print">
+            <span><?php /* @escapeNotVerified */ echo __('Download pdf') ?></span>
+        </a>
+    <?php endif?>
+</div>

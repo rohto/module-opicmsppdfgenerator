@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="editor"/>
+    <head>
+        <link src="Eadesigndev_PdfGeneratorPro::js/pdfcustomizer.js"/>
+    </head>
+
+    <body>
+        <referenceContainer name="content">
+            <block class="Eadesigndev\PdfGeneratorPro\Block\Adminhtml\Xtea\Edit" name="xtea_edit"/>
+        </referenceContainer>
+        <referenceContainer name="left">
+            <block class="Eadesigndev\PdfGeneratorPro\Block\Adminhtml\Xtea\Edit\Tabs" name="xtea_edit_tabs">
+                <block class="Eadesigndev\PdfGeneratorPro\Block\Adminhtml\Xtea\Edit\Tab\General" name="xtea_edit_tab_general"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">general_section</argument>
+                    <argument name="block" xsi:type="string">xtea_edit_tab_general</argument>
+                </action>
+                <block class="Eadesigndev\PdfGeneratorPro\Block\Adminhtml\Xtea\Edit\Tab\Source" name="xtea_edit_tab_source"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">source_section</argument>
+                    <argument name="block" xsi:type="string">xtea_edit_tab_source</argument>
+                </action>
+                <block class="Eadesigndev\PdfGeneratorPro\Block\Adminhtml\Xtea\Edit\Tab\Header" name="xtea_edit_tab_header"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">header_section</argument>
+                    <argument name="block" xsi:type="string">xtea_edit_tab_header</argument>
+                </action>
+                <block class="Eadesigndev\PdfGeneratorPro\Block\Adminhtml\Xtea\Edit\Tab\Body" name="xtea_edit_tab_body"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">body_section</argument>
+                    <argument name="block" xsi:type="string">xtea_edit_tab_body</argument>
+                </action>
+                <block class="Eadesigndev\PdfGeneratorPro\Block\Adminhtml\Xtea\Edit\Tab\Footer" name="xtea_edit_tab_footer"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">footer_section</argument>
+                    <argument name="block" xsi:type="string">xtea_edit_tab_footer</argument>
+                </action>
+                <block class="Eadesigndev\PdfGeneratorPro\Block\Adminhtml\Xtea\Edit\Tab\Css" name="xtea_edit_tab_css"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">css_section</argument>
+                    <argument name="block" xsi:type="string">xtea_edit_tab_css</argument>
+                </action>
+                <block class="Eadesigndev\PdfGeneratorPro\Block\Adminhtml\Xtea\Edit\Tab\Settings" name="xtea_edit_tab_settings"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">settings_section</argument>
+                    <argument name="block" xsi:type="string">xtea_edit_tab_settings</argument>
+                </action>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

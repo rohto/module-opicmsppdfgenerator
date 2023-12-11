@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:framework:Ui/etc/ui_configuration.xsd">
+    <listingToolbar name="listing_top">
+        <massaction name="listing_massaction">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/tree-massactions</item>
+                </item>
+            </argument>
+            <action name="pdf_customizer">
+                <settings>
+                    <type>pdf_customizer</type>
+                    <label translate="true">PDF Generator: Credit Memo</label>
+                    <actions class="Eadesigndev\PdfGeneratorPro\UI\Component\Sales\Order\Creditmemo\Masspdf\Pdftemplates"/>
+                </settings>
+            </action>
+        </massaction>
+    </listingToolbar>
+</listing>
