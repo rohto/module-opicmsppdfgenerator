@@ -85,7 +85,7 @@ class Pdftemplates implements JsonSerializable
      * @return array
      * @SuppressWarnings(PHPMD.UnusedLocalVariable)
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
         $options = [];
 
