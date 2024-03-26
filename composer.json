@@ -2,7 +2,7 @@
   "name": "eadesignro/module-opicmsppdfgenerator",
   "description": "The pdf generator for invoice with additional variables and processing",
   "type": "magento2-module",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "autoload": {
     "files": [
       "registration.php"
