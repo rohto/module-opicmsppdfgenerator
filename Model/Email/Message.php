@@ -9,11 +9,11 @@
 namespace Eadesigndev\PdfGeneratorPro\Model\Email;
 
 use Magento\Framework\Mail\MailMessageInterface;
-use Zend\Mime\Mime;
-use Zend\Mime\PartFactory;
-use Zend\Mail\MessageFactory as MailFactory;
-use Zend\Mime\MessageFactory as MimeFactory;
-use Magento\Framework\Mail\Message as MailMessage;
+use Laminas\Mime\Mime;
+use Laminas\Mime\PartFactory;
+use Laminas\Mail\MessageFactory as MailFactory;
+use Laminas\Mime\MessageFactory as MimeFactory;
+use Laminas\Mail\Message as MailMessage;
 
 class Message extends MailMessage implements MailMessageInterface
 {
