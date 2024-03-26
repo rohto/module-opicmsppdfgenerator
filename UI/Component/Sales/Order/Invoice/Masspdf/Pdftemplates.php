@@ -7,9 +7,8 @@ use Eadesigndev\PdfGeneratorPro\Model\Source\TemplateType;
 use Eadesigndev\PdfGeneratorPro\Model\ResourceModel\Pdfgenerator\CollectionFactory;
 use Eadesigndev\PdfGeneratorPro\Model\Source\TemplateActive;
 use Magento\Framework\UrlInterface;
-use Zend\Stdlib\JsonSerializable;
 
-class Pdftemplates implements JsonSerializable
+class Pdftemplates implements \JsonSerializable
 {
 
     const DISABLED = [
