@@ -8,9 +8,8 @@ use Eadesigndev\PdfGeneratorPro\Model\ResourceModel\Pdfgenerator\CollectionFacto
 use Eadesigndev\PdfGeneratorPro\Model\Source\TemplateActive;
 use Eadesigndev\PdfGeneratorPro\UI\Component\Sales\Order\Invoice\Masspdf\Pdftemplates as InvoicePdftemplates;
 use Magento\Framework\UrlInterface;
-use Zend\Stdlib\JsonSerializable;
 
-class Pdftemplates implements JsonSerializable
+class Pdftemplates implements \JsonSerializable
 {
     /**
      * @var array
