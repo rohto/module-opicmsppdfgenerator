@@ -135,7 +135,7 @@ class Standard extends Template
 
             $template->loadDefault($templateId);
             $template->setData('orig_template_code', $templateId);
-            $template->setData('template_variables', \Zend_Json::encode($template->getVariablesOptionArray(true)));
+            $template->setData('template_variables', \Laminas\Json\Json::encode($template->getVariablesOptionArray(true)));
 
             //$templateBlock = $this->_view->getLayout()->createBlock('Magento\Email\Block\Adminhtml\Template\Edit');
             //$template->setData('orig_template_currently_used_for', $templateBlock->getCurrentlyUsedForPaths(false));
