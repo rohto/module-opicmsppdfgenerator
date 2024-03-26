@@ -13,7 +13,7 @@ use Laminas\Mime\Mime;
 use Laminas\Mime\PartFactory;
 use Laminas\Mail\MessageFactory as MailFactory;
 use Laminas\Mime\MessageFactory as MimeFactory;
-use Laminas\Mail\Message as MailMessage;
+use Magento\Framework\Mail\Message as MailMessage;
 
 class Message extends MailMessage implements MailMessageInterface
 {
