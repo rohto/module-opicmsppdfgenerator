@@ -31,7 +31,7 @@
     "magento/module-backend": "102.0.*",
     "magento/module-sales": "103.0.*",
     "magento/framework": "~103.0.2",
-    "claves/module-eacore": "^0.3.1",
+    "claves/module-eacore": "dev-master",
     "mpdf/mpdf": "8.2.*"
   },
   "require-dev": {
